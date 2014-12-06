@@ -1,0 +1,23 @@
+{
+    "name": "pferre/cart",
+    "description": "A simple shopping cart",
+    "minimum-stability": "dev",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Pierre Ferré",
+            "email": "pierre@pierreferre.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "src"
+        }
+    },
+    "require-dev": {
+        "phpspec/phpspec": "2.0.1"
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
