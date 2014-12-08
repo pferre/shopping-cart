@@ -1,4 +1,8 @@
 [![Build Status](https://travis-ci.org/pferre/shopping-cart.svg?branch=master)](https://travis-ci.org/pferre/shopping-cart)
+#### Update your vendors
+```
+php composer install -o
+```
 
 #### Run the unit tests
 ```
