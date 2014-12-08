@@ -15,7 +15,7 @@ $name = $tomato->getName();
 $DiscountableProduct = str_replace($name, 'Discountable'.$name, $name);
 
 $discountHandler = new DiscountHandler(new $DiscountableProduct);
-$discount = $discountHandler->checkDiscountFor($amount = 9);
+$discount = $discountHandler->checkDiscountFor($amount = 101);
 
 if ( !$discount ) {
     $tomato->setPrice(0.50);
