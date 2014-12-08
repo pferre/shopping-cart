@@ -8,6 +8,8 @@ bin/phpspec run --format=pretty
 ```
 php index.php
 ```
+#### Attempt at a simple shopping cart using BDD
+
 #### Todo
 Format output properly to the console.
 
