@@ -12,6 +12,9 @@ class DiscountableTomatoSpec extends ObjectBehavior
         $this->shouldHaveType('DiscountableTomato');
     }
 
+    /**
+     * @test
+     */
     function it_returns_discounted_price_for_amounts_between_21_and_100()
     {
         $range = $this->getNumberBetween($start = 21, $end = 100);
@@ -19,6 +22,9 @@ class DiscountableTomatoSpec extends ObjectBehavior
         $this->getDiscountedPriceFrom($amount = $range)->shouldReturn(0.18);
     }
 
+    /**
+     * @test
+     */
     function it_returns_discounted_price_for_amounts_101_or_more()
     {
         $this->getDiscountedPriceFrom($amount = 101)->shouldReturn(0.14);

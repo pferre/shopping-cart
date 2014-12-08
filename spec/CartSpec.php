@@ -8,9 +8,8 @@ use Prophecy\Argument;
 
 class CartSpec extends ObjectBehavior
 {
-    function let(\Discount $discount)
+    function let()
     {
-        $this->beConstructedWith($discount);
         $this->shouldHaveType('Cart');
     }
 
@@ -64,7 +63,7 @@ class CartSpec extends ObjectBehavior
     /**
      * @test
      */
-    function it_gets_total_output_in_the_shopping_cart()
+    function it_gets_summary_of_the_shopping_cart()
     {
         $lemon = new Product('Lemon');
         $tomato = new Product('Tomato');
@@ -75,11 +74,9 @@ class CartSpec extends ObjectBehavior
         $this->addItem($lemon, $amount = 2);
         $this->addItem($tomato, $amount = 2);
 
-        //$this->applyDiscount()->shouldBeCalled();
-
         $this->getTotalSum()->shouldReturn([
             ['amount' => 2, 'name' => 'Lemon', 'price' => 1.00 ],
-            ['amount' => 2, 'name' => 'Tomato', 'price' => 0.40]
+            ['amount' => 2, 'name' => 'Tomato', 'price' => 0.40 ]
         ]);
     }
 

@@ -8,13 +8,6 @@ class Cart implements CartInterface, Countable {
      */
     private $collection;
 
-    private $discount;
-
-    function __construct(Discount $discount = null)
-    {
-        $this->discount = $discount;
-    }
-
 
     /**
      * Display a summary of the shopping cart
@@ -22,18 +15,10 @@ class Cart implements CartInterface, Countable {
      */
     public function getTotalSum()
     {
-        $products = [];
-        $sum = 0;
-
         foreach ($this->collection as $product)
         {
             $products[] = $product->displayAttributes();
-            $sum += $product->calculateTotalPrice();
         }
-
-//        echo 'Total is '.number_format($sum, 2) .PHP_EOL;
-
-        var_dump($products);
 
         return $products;
     }
@@ -53,8 +38,6 @@ class Cart implements CartInterface, Countable {
             throw new InvalidArgumentException;
         }
 
-
-
         $product->setAmount($amount);
 
         $this->collection[] = $product;
@@ -68,7 +51,7 @@ class Cart implements CartInterface, Countable {
      */
     public function getPriceOf(Product $product)
     {
-        return $product->getPrice();
+        return (float) $product->getPrice();
     }
 
     /**
