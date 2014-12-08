@@ -12,7 +12,7 @@ php index.php
 Resolving a discountable tier for a particular product:
 ```
 $DiscountableProduct = str_replace($name, 'Discountable'.$name, $name);
-$handler = new DiscountHandler(new DiscountableProduct);
+$handler = new DiscountHandler(new $DiscountableProduct);
 $discount = $handler->checkDiscountFor($amount = 80);
 ```
 #### Limitations and todo
